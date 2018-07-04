@@ -4,28 +4,24 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Exercici 2</title>
+	<style>
+		.third:not(.second) {
+			font-weight: 15px;
+		}
+
+	</style>
 </head>
 <body>
-	<form>
-	<label for="male">Male</label>
-	<input type="radio" name="gender" value="male" id="male" checked>
-	<label for="female">Female</label>
-	<input type="radio" name="gender" value="female" id="female">
-	<label for="other">Other</label>
-	<input type="radio" name="gender" value="other" id="other">
-
-	<input type="checkbox" name="gender2" value="NB"> Non-binary <br>
-	<input type="checkbox" name="gender3" value="NB"> Apache Helicopter <br>
-
-	<input type="submit" name="submit">
-	<br><br><br>
+	<div class="second">
+		<p id="first" class="second third">1
+			<p class="second third">2
+				<p class="third"> 3 </p>
+			</p>
+		</p>
+	<div>
 
 
-	Essay:
 
-	<br><textarea name="message" rows="10" cols="30"></textarea>
-
-	</form>
 
 
 
