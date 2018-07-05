@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Media</title>
+	<style>
+		@media screen and (max-width:50px){
+			body{
+				background-color: #06F115;
+			}
+			p{
+				color: #0E0E0E;
+			}
+
+		}
+		@media screen and (min-width:60px) and (max-width: 150px){
+			body{
+				background-color: #16EA80;
+			}
+			p{
+				color: #0E0E0E;
+			}
+		}
+		@media print{
+			body{
+				background-color: ##F9020A;
+			}
+			p{
+				color: #0E0E0E;
+			}
+		}
+	</style>
+</head>
+<body>
+	<p>Code a file with @media css rules where the body changes color when the screen is:</p>
+	<p>- the media is a screen with max width 50px</p>
+	<p>- min width 60px and max width 150px</p>
+	<p>- the media is a printer</p>
+</body>
+</html>
