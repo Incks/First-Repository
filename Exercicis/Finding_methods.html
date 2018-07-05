@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Page Title</title>
+	<style>
+	</style>
+	<script type="text/javascript">
+		window.onload = function () {
+		document.getElementById("first").innerHTML = "First";
+		document.getElementsByClassName("second")[0].innerHTML = "Second";
+		document.getElementsByClassName("second")[1].innerHTML = "Second";
+		document.getElementsByTagName("div")[3].innerHTML = "Third";
+
+	}
+</script>
+
+</head>
+<body>
+	<p>Fes un div amb id ="first" i posa-li de valor PRIMER, també dos divs amb class="second" i que tinguin de valor SEGON, i finalment un tercer div sense classe ni id i que tingui valor TERCER.</p>
+	<div id="first">PRIMER</div>
+	<div class="second">SEGON</div>
+	<div class="second">SEGON</div>
+	<div>TERCER</div>
+
+</body>
+</html>
