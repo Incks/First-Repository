@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Page Title</title>
+	<style>
+		html, body{
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		background-color: #e5e5e5;
+	}
+	</style>
+	<script type="text/javascript">
+
+		function square(){
+			var result=document.getElementById("inputt").value;
+			result *=result;
+			document.getElementById("ResultS").innerHTML = "Result ="+result;
+		}
+		function odd(){
+			var result=document.getElementById("EO").value;
+			if(result % 2 == 0){
+			document.getElementById("ResultS2").innerHTML = "Result ="+"even";
+		}
+		if(result % 2 != 0){
+			document.getElementById("ResultS2").innerHTML = "Result ="+"odd";
+		}
+		}
+		function fac(){
+			var i =0;
+			var resultf=document.getElementById("Fac").value;
+			i=resultf-1;
+			while(i>0){
+				resultf*=i;
+				i--;
+			}
+			document.getElementById("ResultS3").innerHTML = "Result ="+resultf;
+		}
+		function ran(){
+			var result=Math.floor((Math.random() * 100000000) + 1);
+			document.getElementById("ResultS4").innerHTML = "Result ="+result;
+		}
+		function big(){
+			var num1 = [];
+			num1[1]=document.getElementById("n1").value;
+			num1[2]=document.getElementById("n2").value;
+			num1[3]=document.getElementById("n3").value;
+			num1[4]=document.getElementById("n4").value;
+			for (var i = 4; i > 0; i--) {
+				if(num1[i]>=num1[4] && num1[i]>=num1[3]&& num1[i]>=num1[2]&& num1[i]>=num1[2]){
+					document.getElementById("ResultS5").innerHTML = "Result ="+num1[i];
+				}
+			}
+		}
+		function funo(){
+			square();
+			odd();
+			fac();
+			ran();
+			big();
+		}
+
+		function mon(){
+			var mL = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+			var result = [];
+			for (var i = 0; i <= 12; i++) {
+				console.log(result);
+				result+=mL[i]+", ";
+			}
+			document.getElementById("ResultS6").innerHTML = "Result = "+ result;
+
+		}
+		
+
+</script>
+</head>
+<body>
+	<p>Basic javascript stuff. Make a function that...:
+	- Calculates the square of a given number.
+	- Check if a number is even or odd.
+	- Calculates the factorial of a number.
+	- Returns a random number.
+	- Returns which of 4 given numbers is the biggest.
+	- Call another function.
+	- Uses console.log() to show the content of an array with the months of the year.</p> <br><br>
+	<form>
+		Square of a numer: <input id="inputt" type="text" name="fname">
+	</form>
+	<button onclick="square()">Calculate</button> <br>
+	<p id="ResultS">Result = </p>
+
+	<form>
+		Even or odd: <input id="EO" type="text" name="fname">
+	</form>
+	<button onclick="odd()">Calculate</button> <br>
+	<p id="ResultS2">Result = </p>
+
+	<form>
+		Factorial: <input id="Fac" type="text" name="fname">
+	</form>
+	<button onclick="fac()">Calculate</button> <br>
+	<p id="ResultS3">Result = </p>
+
+	<button onclick="ran()">Random number</button>
+	<p id="ResultS4">Result = </p>
+	<form>
+		Number: <input id="n1" type="text" name="fname"><br>
+		Number: <input id="n2" type="text" name="fname1"><br>
+		Number: <input id="n3" type="text" name="fname2"><br>
+		Number: <input id="n4" type="text" name="fname3"><br>
+	</form>
+	<button onclick="big()">Biggest?</button>
+	<p id="ResultS5">Result = </p>
+	<button onclick="funo()">Call all the functions</button><br>
+	<button onclick="mon()">Months</button>
+	<p id="ResultS6">Result = </p>
+	
+
+
+</body>
+</html>
