@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<title>Page Title</title>
+	<style>
+	html, body{
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		background-color: #e5e5e5;
+	}
+	#d{
+		margin: 0 auto;
+		width: 750px;
+		height: 750; 
+	}
+
+	.gran{
+		font-size: 100px;
+		text-align: center;
+
+
+	}
+	</style>
+	<script type="text/javascript">
+
+	function promt() {
+		var person = prompt("Please enter your name:", "Harry Potter");
+		result = person.toUpperCase();
+		document.getElementById("tes").innerHTML = "HOLA "+result;
+	}
+
+	function chan() {
+		var n=document.getElementById("YName").value;
+		result = n.toUpperCase();
+		document.getElementById("tes").innerHTML = "HOLA "+result;
+	}
+		
+</script>
+</head>
+<body>
+	<div id="d">
+	<p class="gran" id="tes">HOLA _____<p><br>
+	<form>
+		Name: <input id="YName" value="Harry Potter" type="text" name="aef">
+	</form> <button onclick="chan()">Enter to our datebase</button><br> <br>
+	<p class="gran">OR</p><br> <br>
+	<button onclick="promt()">Prompt</button>
+
+</div>
+</body>
+</html>
