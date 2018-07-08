@@ -1,0 +1,100 @@
+html, body{
+	background-color: #343434;
+}
+@font-face{
+		font-family: "Lora";
+		src: url('ADAM.CG PRO.otf');
+	}
+
+	#header{
+		position: absolute;
+		top: 30px;
+		left: 20%;
+		height: 200px;/*200px*/
+		width: 55%;
+		background-color: #FF8A06;
+		border-radius: 25px;
+	}
+	#Title{
+		font-family: Lora;
+		position: absolute;
+		bottom: -35px;
+		left: 200px;
+		color: white;
+		font-size: 650%;
+
+	}
+#container{
+	margin-top: 350px;
+	width: 60%;
+	margin: 0 auto;
+	height: 100%;
+	margin-top: 10px;
+	display: flexbox;
+	flex-flow:row wrap;
+	display: flex;
+}
+
+#container > div{
+margin: 15px 15px 0 0;
+
+}
+
+#container > div > img{
+	transform: translateZ(0);
+	transition: transform .5s;
+}
+
+#container > div:hover{
+	z-index: 1;
+}
+
+#container > div:hover > img{
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+@media screen and (max-width: 1600px){
+	#Title{
+		font-size: 450%;
+		bottom: 0px;
+		left: 200px;
+
+	}
+}
+@media screen and (max-width: 1300px){
+	#Title{
+		font-size: 350%;
+		bottom: 20px;
+		left: 50px;
+
+	}
+}
+@media screen and (max-width: 600px){
+	#Title{
+		font-size: 250%;
+		bottom: 20px;
+		left: 20px;
+
+	}
+}
+
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
