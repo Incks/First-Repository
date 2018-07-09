@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<title>Page Title</title>
+	<style>
+	html, body{
+		background-color: #e5e5e5;
+	}
+
+	#cont{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100vh;
+		height: 100vh;
+		background-color: blue;	}
+
+		#u_min {
+			font-size: 75px;
+			color: white;
+		}
+		#u_sec {
+			font-size: 75px;
+			color: white;
+		}
+		#dos{
+			font-size: 75px;
+			color: white;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function () {
+			document.getElementById("u_sec").innerHTML = '00';document.getElementById("u_min").innerHTML = '00';
+			var un_sec = 0;
+			var un_min= 0;
+			setInterval( function(){un_sec +=1;
+			if (un_sec<10) {
+				document.getElementById("u_sec").innerHTML = '0'+ un_sec;
+			}
+			else if (un_sec == 60) {
+				document.getElementById("u_sec").innerHTML = '00';
+				un_sec=0;
+			}
+			else{
+			document.getElementById("u_sec").innerHTML = un_sec;}
+			
+		}, 1000);
+
+		setInterval( function(){un_min +=1;
+			if (un_min<10) {
+				document.getElementById("u_min").innerHTML = '0'+un_min;
+			}else{
+			document.getElementById("u_min").innerHTML = un_min;
+
+		}
+			
+		}, 60000);
+
+	}
+	
+</script>
+</head>
+<body>
+	<div id="cont"><p id="u_min"></p><p id="dos">:</p><p id="u_sec"></p></div>
+</body>
+</html>
