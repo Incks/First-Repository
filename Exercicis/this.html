@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<title>This</title>
+	<style>
+	html, body{
+
+		background-color: #e5e5e5;
+	}
+
+	#cont{
+		justify-content: center;
+		align-items: center;
+		width: 500px;
+		height: 500px;
+	}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+		var result = "";
+		document.getElementById("input1").onchange=(function (){ 
+			result += this.value + '-';
+			document.getElementById("output").innerHTML = result;
+			 });}
+
+		
+</script>
+</head>
+<body>
+	<div id="cont">
+		<input type="text" id="input1" name="input_1">
+		<p id="output"></p>
+	</div>
+
+</body>
+</html>
