@@ -5,112 +5,142 @@
 			<meta charset="UTF-8">
 			<title>Page Title</title>
 			<style>
-				html, body{
-					width: 100%;
-					height: 100%;
-					background-color: #e5e5e5;
-				}
-				#header{
-					width: 100%;
-					display: flex;
-				}
+			html, body{
+				width: 100%;
+				height: 100%;
+				background-color: #e5e5e5;
+			}
+			#header{
+				width: 100%;
+				display: flex;
+				justify-content: center;
+			}
 
-				#head_1sec{
-					
-					width: 50%;
-					height: 200px;
-					display: flex;
-					justify-content: center;
-					align-items: flex-start;
-				}
-				#head_2sec{
-					
-					width: 50%;
-					height: 200px;
-					display: flex;
-					justify-content: center;
-					align-items: flex-start;
-				}
+			#head_1sec{
 
-				#imatge{
-					position: absolute;
-					width: 1263px;
-					height: 200px;
-					
-				}
-				#u_min {
-					font-size: 25px;
-					color: white;
-				}
-				#u_sec {
-					font-size: 25px;
-					color: white;
-				}
-				#dos{
-					font-size: 25px;
-					color: white;
-				}
-			</style>
-			<script type="text/javascript">
-				var last_color="red";
-				var now_color;
-				document.getElementById("u_sec").innerHTML = '00';document.getElementById("u_min").innerHTML = '00';
-				var un_sec = 0;
-				var un_min= 0;
-				window.onload = function () {
-					document.getElementById('imatge').src = "rede.png";
-					setInterval(myFunction, 2000);
+				width: 50%;
+				height: 200px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			#head_2sec{
 
-					function myFunction() {
-						if(last_color=="red"){
-							last_color="green";
-							now_color="green";
-							document.getElementById('imatge').src = "greene.png";
-						}
-						else if(last_color=="green"){
-							last_color="blue";
-							now_color="blue";
-							document.getElementById('imatge').src = "bluee.png";
-						}
-						else if(last_color=="blue"){
-							last_color="red";
-							now_color="red";
-							document.getElementById('imatge').src = "rede.png";
-						}
+				width: 50%;
+				height: 200px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			#imatge{
+				position: absolute;
+				width: 683px;
+				height: 200px;
+
+			}
+			#h_cont{
+				font-size: 100px;
+				color: black;
+				display: flex;
+				justify-content: center;
+			}
+
+			main{
+				width: 50%;
+				margin: 0 auto;
+				height: 500px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+			}
+			footer{
+				width: 100%;
+				height: 200px;
+				background-color: #343434;
+			}
+
+		</style>
+		<script type="text/javascript">
+			var last_color="red";
+			var now_color;
+
+			var un_sec = 0;
+			var un_min= 0;
+			window.onload = function () {
+				document.getElementById("u_sec").innerHTML = '00';
+				document.getElementById("u_min").innerHTML = '00';
+				document.getElementById('imatge').src = "rede.png";
+				setInterval(myFunction, 2000);
+				setInterval(chan,100);
+				
+
+				function myFunction() {
+					if(last_color=="red"){
+						last_color="green";
+						now_color="green";
+						document.getElementById('imatge').src = "greene.png";
 					}
-					setInterval( function(){un_sec +=1;
-						if (un_sec<10) {
-							document.getElementById("u_sec").innerHTML = '0'+ un_sec;
-						}
-						else if (un_sec == 60) {
-							document.getElementById("u_sec").innerHTML = '00';
-							un_sec=0;
-						}
-						else{
-							document.getElementById("u_sec").innerHTML = un_sec;}
-
-						}, 1000);
-
-					setInterval( function(){un_min +=1;
-						if (un_min<10) {
-							document.getElementById("u_min").innerHTML = '0'+un_min;
-						}else{
-							document.getElementById("u_min").innerHTML = un_min;
-
-						}
-
-					}, 60000);
+					else if(last_color=="green"){
+						last_color="blue";
+						now_color="blue";
+						document.getElementById('imatge').src = "bluee.png";
+					}
+					else if(last_color=="blue"){
+						last_color="red";
+						now_color="red";
+						document.getElementById('imatge').src = "rede.png";
+					}
 				}
-			</script>
-		</head>
-		<body>
-			<header id="header">
-				<section id="head_1sec">
-					<img id="imatge" src="">
-				</section>
-				<section id="head_2sec">
-					
-				</section>
-			</header>
-		</body>
-		</html>
+				setInterval( function(){un_sec +=1;
+					if (un_sec<10) {
+						document.getElementById("u_sec").innerHTML = '0'+ un_sec;
+					}
+					else if (un_sec == 60) {
+						document.getElementById("u_sec").innerHTML = '00';
+						un_sec=0;
+					}
+					else{
+						document.getElementById("u_sec").innerHTML = un_sec;}
+
+					}, 1000);
+
+				setInterval( function(){un_min +=1;
+					if (un_min<10) {
+						document.getElementById("u_min").innerHTML = '0'+un_min;
+					}else{
+						document.getElementById("u_min").innerHTML = un_min;
+
+					}
+
+				}, 60000);
+			}
+			function chan() {
+				var n=document.getElementById("YName").value;
+				result = n.toUpperCase();
+				document.getElementById("tes").innerHTML = "HOLA "+result;
+
+			}
+
+		</script>
+	</head>
+	<body>
+		<header id="header">
+			<section id="head_1sec">
+				<img id="imatge" src="">
+			</section>
+			<section id="head_2sec">
+				<div id="h_cont"><p id="u_min"></p><p id="dos">:</p><p id="u_sec"></p></div>
+			</section>
+		</header>
+		<main>
+			<input id="YName" value="Harry Potter" type="text" name="aef">
+			<p class="gran" id="tes">HOLA _____<p><br>
+		</main>
+
+		<footer>
+			
+		</footer>
+	</body>
+	</html>
