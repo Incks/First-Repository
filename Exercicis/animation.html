@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<meta charset="UTF-8">
+	<title>Page Title</title>
+	<style>
+	html, body{
+		width: 100%;
+		height: 100%;
+		background-color: #e5e5e5;
+	}
+
+	#cont{
+		width: 100%;
+		height: 100%;
+		background-color: #e5e5e5;
+	}
+	#tri{
+		position: absolute;
+	}
+	</style>
+	<script type="text/javascript">
+	var pos = "rUP";
+	var elem;
+	window.onload = function () {
+		elem =document.getElementById('tri');		
+		setInterval(myF,1000);				
+	}
+
+	function myF() {
+		console.log("hey");
+		var lef= Math.random()*window.innerWidth;
+		var up= Math.random()*window.innerHeight;
+		elem.style.left = lef + "px";
+		elem.style.top = up + "px";
+		/*if (pos=="rUP") {
+			elem.style.left = "0px";
+			elem.style.top = "0px";
+			pos="lUP";
+		}
+		else if (pos=="lUP") {
+			elem.style.left = "500px";
+			elem.style.top = "0px";
+			pos="lDOWN";
+		}
+		else if (pos=="lDOWN") {
+			elem.style.left = "500px";
+			elem.style.top = "500px";
+			pos="rDOWN";
+		}
+		else if (pos=="rDOWN") {
+			elem.style.left = "0px";
+			elem.style.top = "500px";
+			pos="rUP";
+		}*/
+	}
+</script>
+</head>
+<body>
+	<div id="cont">
+	<i class="fas fa-exclamation-triangle fa-5x" id="tri"></i></div>
+</body>
+</html>
