@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
 	<meta charset="UTF-8">
 	<title>Page Title</title>
 	<style>
@@ -13,8 +13,8 @@
 
 	#cont{
 		margin: 0 auto;
-		width: 100%;
-		height: 100%;
+		width: 1000px;
+		height: 500px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -22,6 +22,7 @@
 	}
 	#imatge{
 		position: absolute;
+
 		width: 1000px;
 		height: 500px;
 	}
@@ -74,8 +75,8 @@
 					document.getElementById('imatge').src = "green.png";
 				}
 				else if(now_color=="red"){
-					last_color="blue";
 					now_color="blue";
+					last_color="blue";
 					document.getElementById('imatge').src = "blue.png";
 				}
 			}
