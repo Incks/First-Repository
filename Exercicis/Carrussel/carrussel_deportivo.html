@@ -31,25 +31,52 @@
 		width: 50px;
 	}
 
+	#rB{
+		margin-left: 1000px;
+	}
+
 	</style>
 	<script type="text/javascript">
 		window.onload = function () {
 			document.getElementById('imatge').src = "red.png";
 			var last_color="red";
+			var now_color;
 			setInterval(myFunction, 2000);
+			document.getElementById('rB').onclick = myFunction;
+			document.getElementById('lB').onclick = myFunction2;
 
 			function myFunction() {
 				if(last_color=="red"){
 					last_color="green";
+					now_color="green";
 					document.getElementById('imatge').src = "green.png";
 				}
 				else if(last_color=="green"){
 					last_color="blue";
+					now_color="blue";
 					document.getElementById('imatge').src = "blue.png";
 				}
 				else if(last_color=="blue"){
 					last_color="red";
+					now_color="red";
 					document.getElementById('imatge').src = "red.png";
+				}
+			}
+			function myFunction2() {
+				if(now_color=="green"){
+					now_color="red";
+					last_color="red";
+					document.getElementById('imatge').src = "red.png";
+				}
+				else if(now_color=="blue"){
+					now_color="green";
+					last_color="green";
+					document.getElementById('imatge').src = "green.png";
+				}
+				else if(now_color=="red"){
+					last_color="blue";
+					now_color="blue";
+					document.getElementById('imatge').src = "blue.png";
 				}
 			}
 	}
