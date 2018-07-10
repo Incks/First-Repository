@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<title>Page Title</title>
+	<style>
+	html, body{
+		width: 100%;
+		height: 100%;
+		background-color: #e5e5e5;
+	}
+
+	#cont{
+		margin: 0 auto;
+		width: 1000px;
+		height: 500px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #343434;
+	}
+	#imatge{
+		position: absolute;
+		width: 1000px;
+		height: 500px;
+	}
+
+	#rB, #lB{
+		height: 50px;
+		width: 50px;
+	}
+
+	</style>
+	<script type="text/javascript">
+		window.onload = function () {
+			document.getElementById('imatge').src = "red.png";
+			var last_color="red";
+			setInterval(myFunction, 2000);
+
+			function myFunction() {
+				if(last_color=="red"){
+					last_color="green";
+					document.getElementById('imatge').src = "green.png";
+				}
+				else if(last_color=="green"){
+					last_color="blue";
+					document.getElementById('imatge').src = "blue.png";
+				}
+				else if(last_color=="blue"){
+					last_color="red";
+					document.getElementById('imatge').src = "red.png";
+				}
+			}
+	}
+	
+</script>
+</head>
+<body>
+	<div id="cont">
+		<button id="lB"></button>
+		<img id="imatge" src="">
+		<button id="rB"></button>
+	</div>
+</body>
+</html>
