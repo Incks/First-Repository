@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<title>Snake</title>
+	<style>
+		html, body{
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	</style>
+	<script type="text/javascript">
+		var x_s;
+		var y_s;
+		var x_f;
+		var y_f;
+		var context;
+		var pix_f_s=25;
+		var pix_s_s=25;
+		var snake_size = 1;
+		var interval_variable;
+		var positions = [{x:20, y:20, dx:2, dy:3}];
+
+		function initialize() {
+			var c = document.getElementById('myCanvas');
+			ctx = c.getContext("2d");
+			updateFruit();
+			updateSnake();
+		}
+		function updateFruit() {
+			x_f=Math.random()*450;			//(500/snake_size + 1)*snake_size;
+			y_f=Math.random()*450;			//(500/snake_size + 1)*snake_size;
+			draw(x_f,y_f,pix_f_s,"red");
+		}
+		function updateSnake() {
+			draw(0,0,pix_s_s,"black");
+		}
+		function draw(x,y,size,color) {
+			ctx.beginPath();
+			
+			ctx.fillStyle = color;
+			ctx.rect(x,y,size,size);
+			ctx.fill();
+		}
+		window.onload = function() {
+			initialize();
+		}
+
+	</script>
+</head>
+<body>
+	<canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;">
+		Your browser does not support the HTML5 canvas tag
+	</canvas>
+</body>
+</html>
