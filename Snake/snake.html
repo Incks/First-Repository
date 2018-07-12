@@ -14,8 +14,8 @@
 		}
 	</style>
 	<script type="text/javascript">
-		var x_s;
-		var y_s;
+		var x_s=50;
+		var y_s=50;
 		var x_f;
 		var y_f;
 		var context;
@@ -23,7 +23,13 @@
 		var pix_s_s=25;
 		var snake_size = 1;
 		var interval_variable;
-		var positions = [{x:20, y:20, dx:2, dy:3}];
+		var directions =  {dx:0,dy:0};
+
+		setInterval(updateSnake, 300);
+
+		function update() {
+			updateSnake();
+		}
 
 		function initialize() {
 			var c = document.getElementById('myCanvas');
@@ -37,7 +43,9 @@
 			draw(x_f,y_f,pix_f_s,"red");
 		}
 		function updateSnake() {
-			draw(0,0,pix_s_s,"black");
+			x_s+=directions.dx;
+			y_s+=directions.dy;
+			draw(x_s,y_s,pix_s_s,"black");
 		}
 		function draw(x,y,size,color) {
 			ctx.beginPath();
@@ -48,6 +56,26 @@
 		}
 		window.onload = function() {
 			initialize();
+
+			window.onkeydown = function (e) { 
+				e = e || window.event; 
+				var charCode = e.keyCode;
+				
+				if (charCode == 37) {
+					directions.dx = -25;directions.dy = 0;
+				}
+				if (charCode == 38) {
+					directions.dx = 0;directions.dy = -25;
+				}
+				if (charCode == 39) {
+					directions.dx = 25;directions.dy = 0;
+				}
+				if (charCode == 40) {
+					directions.dx = 0;directions.dy = 25;
+				}
+
+			}
+
 		}
 
 	</script>
