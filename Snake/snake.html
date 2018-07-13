@@ -5,84 +5,200 @@
 	<meta charset="UTF-8">
 	<title>Snake</title>
 	<style>
-		html, body{
-			width: 100%;
-			height: 100%;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-	</style>
-	<script type="text/javascript">
-		var x_s=50;
-		var y_s=50;
-		var x_f;
-		var y_f;
-		var context;
-		var pix_f_s=25;
-		var pix_s_s=25;
-		var snake_size = 1;
-		var interval_variable;
-		var directions =  {dx:0,dy:0};
+	html, body{
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow:hidden;
+		flex-direction: column;
+	}
 
-		setInterval(updateSnake, 300);
+	#play{
+		visibility: hidden;
+		background-color: #2ead20;
+		width: 100px;
+		height: 50px;
+		margin-top: 25px;
+		border-radius: 15px;
+		border-width: 2px;
+		border-color: #000000;
+	}
 
-		function update() {
-			updateSnake();
-		}
+</style>
+<script type="text/javascript">
+	var x_s=225;
+	var y_s=250;
+	var positions_x = [];
+	var positions_y = [];
+	var old_position_x = [];
+	var old_position_y = [];
+	var x_f;
+	var y_f;
+	var rn_x=0;
+	var rn_y=0;
+	var context;
+	var pix_f_s=25;
+	var pix_s_s=25;
+	var snake_size = 0;
+	var interval_variable;
+	var directions =  {dx:25,dy:0};
+	var aux =0;
+	var i =0;
+	var last_Key = "r";
+	var myVar;
+	var color_g=190;
+	var c=1;
+	
 
-		function initialize() {
-			var c = document.getElementById('myCanvas');
-			ctx = c.getContext("2d");
+	function update() {
+		ctx.clearRect(0,0,500,500);
+		if (x_s == rn_x && y_s == rn_y) {
 			updateFruit();
-			updateSnake();
-		}
-		function updateFruit() {
-			x_f=Math.random()*450;			//(500/snake_size + 1)*snake_size;
-			y_f=Math.random()*450;			//(500/snake_size + 1)*snake_size;
-			draw(x_f,y_f,pix_f_s,"red");
-		}
-		function updateSnake() {
-			x_s+=directions.dx;
-			y_s+=directions.dy;
-			draw(x_s,y_s,pix_s_s,"black");
-		}
-		function draw(x,y,size,color) {
-			ctx.beginPath();
-			
-			ctx.fillStyle = color;
-			ctx.rect(x,y,size,size);
-			ctx.fill();
-		}
-		window.onload = function() {
-			initialize();
+			snake_size+=1;
 
-			window.onkeydown = function (e) { 
-				e = e || window.event; 
-				var charCode = e.keyCode;
+		}
+		draw(rn_x,rn_y,pix_f_s,"red");
+		updateSnake();
+
+
+	}
+
+	function initialize() {
+		myVar=setInterval(update, 300);
+		document.getElementById("play").style.visibility = "hidden";
+		x_s=225;
+		y_s=250;
+		positions_x = [];
+		positions_y = [];
+		old_position_x = [];
+		old_position_y = [];
+		x_f;
+		y_f;
+		rn_x=0;
+		rn_y=0;
+		context;
+		pix_f_s=25;
+		pix_s_s=25;
+		snake_size = 0;
+		interval_variable;
+		directions =  {dx:25,dy:0};
+		aux =0;
+		i =0;
+		last_Key = "r";
+		for (i = 0; i < 18; i++) {
+			rn_x = 25*i;
+			positions_x[i]=rn_x;
+			positions_y[i]=rn_y;
+
+		}
+		i=0;
+		for (i = 200 - 1; i >= 0; i--) {
+			old_position_x[i] = 1;
+			old_position_y[i] = 1;
+		}
+		var c = document.getElementById('myCanvas');
+		ctx = c.getContext("2d");
+		updateFruit();
+		updateSnake();
+	}
+
+
+
+	function updateFruit() {
+		x_f=Math.floor((Math.random() * 17) + 0);			
+		y_f=Math.floor((Math.random() * 17) + 0);
+		rn_x = positions_x[x_f];
+		rn_y = positions_x[y_f];
+	}
+
+	function updateSnake() {
+		if (x_s < 0 || y_s <0 || x_s > 500 || y_s > 500) {
+			game_over();
+		}
+		for (i = snake_size-1; i >= 0; i--) {
+			if (x_s == old_position_x[i] && y_s == old_position_y[i]) {
+				game_over();
+			}
+		}
+
+		
+		if (snake_size >= 2) {
+			for (i = snake_size-1, c=0; i >= 1; i--, c++) {
+				color_g=190;
+				var a = i-1;
+				old_position_x[i]=old_position_x[a];
+				old_position_y[i]=old_position_y[a];
+				color_g+=c*10;
+				draw(old_position_x[i],old_position_y[i],pix_s_s,"rgb(62,"+color_g+", 11)");
 				
-				if (charCode == 37) {
-					directions.dx = -25;directions.dy = 0;
-				}
-				if (charCode == 38) {
-					directions.dx = 0;directions.dy = -25;
-				}
-				if (charCode == 39) {
-					directions.dx = 25;directions.dy = 0;
-				}
-				if (charCode == 40) {
-					directions.dx = 0;directions.dy = 25;
-				}
+			}
+		}
+		if (snake_size >= 1) {
+			old_position_x[0] = x_s;
+			old_position_y[0] = y_s;
+			draw(old_position_x[0],old_position_y[0],pix_s_s,"rgb(62,"+color_g+3+", 11)");
 
+		}
+		x_s+=directions.dx;
+		y_s+=directions.dy;
+		draw(x_s,y_s,pix_s_s,"rgb(62,"+color_g+6+", 11)");
+
+
+	}
+
+	function game_over() {
+		document.getElementById("play").style.visibility = "visible";
+		alert("GAME OVER");
+		clearInterval(myVar);
+		ctx.clearRect(0,0,500,500);
+	}
+
+	function draw(x,y,size,color) {
+		ctx.beginPath();
+		ctx.fillStyle = color;
+		ctx.rect(x,y,size,size);
+		ctx.fill();
+	}
+
+	window.onload = function() {
+		initialize();
+
+		window.onkeydown = function (e) { 
+			e = e || window.event; 
+			var charCode = e.keyCode;
+
+			if (charCode == 37 && last_Key!= "r") {
+				directions.dx = -25;directions.dy = 0;
+				last_Key="l";
+			}
+			else if (charCode == 38 && last_Key!= "d") {
+				directions.dx = 0;directions.dy = -25;
+				last_Key="u";
+			}
+			else if (charCode == 39 && last_Key!= "l") {
+				directions.dx = 25;directions.dy = 0;
+				last_Key="r";
+			}
+			else if (charCode == 40 && last_Key!= "u") {
+				directions.dx = 0;directions.dy = 25;
+				last_Key="d";
 			}
 
 		}
+		document.getElementById("play").onclick =initialize;
 
-	</script>
+	}
+
+</script>
 </head>
 <body>
 	<canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;">
 		Your browser does not support the HTML5 canvas tag
 	</canvas>
+	<div>
+		<button id="play">PLAY AGAIN</button>
+	</div>
 </body>
 </html>
