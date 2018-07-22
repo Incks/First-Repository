@@ -1,0 +1,47 @@
+body{
+	background-color: #343434;
+}
+
+h1{
+	text-align: center;
+}
+
+.img_prod{
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#new_body div{
+	
+}
+
+p{
+	margin:0px 15px 0 15px;
+}
+
+.div_history{
+	display: flex;
+	justify-content: center;
+}
+
+#new_body{
+	background-color: #fff;
+	width: 52%;
+	height: 100%;
+	margin:0 auto;
+	border: 1px gray solid;
+
+}
+
+@media screen and (max-width: 1000px){
+	#new_body{
+		width: 75%;
+}
+}
+
+@media screen and (max-width: 600px){
+	#new_body{
+		width: 90%;
+}
+}

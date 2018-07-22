@@ -1,0 +1,115 @@
+body{
+	background-color: #343434;
+}
+@font-face{
+	font-family: "Lora";
+	src: url('img/ADAM.CG PRO.otf');
+}
+
+
+
+.pan_ejemplo{
+	border: 5px gray solid;
+	border-radius: 10px;
+	width: 250px;
+	height: 300px;
+	margin-top: 19px;
+	margin-right: 20px;
+}
+
+#logo_pan{
+	margin:0 auto;
+}
+
+.compra{
+	margin-left: 20px;
+}
+
+
+
+.tamaño{
+	margin-left: 20px;
+	margin-top: 15px;
+}
+.precio{
+	font-family: Lora;
+	font-size: 30px;
+	margin-bottom: 0px;
+}
+
+.pan_img{
+	margin-left: 20px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+}
+
+
+
+#tipo_pan{ 
+	width: 100%;
+	height: 100%;
+	margin-left: 18px;
+	display: flexbox;
+	flex-flow:row wrap;
+	display: flex;
+
+}
+
+#article{
+	display: flex;
+	height: 100%
+}
+
+#new_body{
+	background-color: #fff;
+	width: 52%;
+	height: 100%;
+	margin:0 auto;
+
+}
+#new_body h1{
+	text-align: center;
+}
+
+
+#med{
+	position:sticky;
+	display: flex;
+	align-self: flex-start;
+	flex-direction: column;
+	background-color: transparent;
+	border-radius: 5px;
+	margin-top: 15px;
+	width: 53px;
+	top: 50px;
+	left: 0px;
+	right: 0px;
+}
+
+#face{
+	margin-top:5px;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+#tw{
+	margin-top:5px;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+#wh{
+	margin-top:5px;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+#in{
+	margin-top:5px;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+@media screen and (max-width: 650px){
+	#new_body{
+		width: 75%;
+}
+}

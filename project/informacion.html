@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>8A: INFORMACIÓN</title>
+	<link rel="stylesheet" type="text/css" href="libraries/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css_and_scss/informacion_style.css">
+	<script type="text/javascript" src="java_s/informacion_javascript.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar_principal">		
+		<a class="navbar-brand" href="home.html"><img src="img/logo_navbar_web.png" width="40" height="30" class="d-inline-block align-top" alt="Logo">PANADERIA OCHOA</a>
+
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse mr-auto text-center" id="navbarTogglerDemo01">
+
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href="home.html">Inicio</a>
+				</li>
+
+				<li class="nav-item">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Productos
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item" href="compra.html">Comprar</a>
+							<a class="dropdown-item" href="nuestro_pan.html">Nuestro Pan</a>
+						</div>
+					</li>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-item nav-link" href="historia.html">Historia</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-item nav-link active" href="informacion.html">Contacto</a>
+				</li>
+			</ul>
+			<button type="button" class="btn btn-outline-primary">Redes Sociales</button>
+		</div>
+	</nav>
+	
+	<div id="new_body">
+		<div class="contact-title">
+			<h1>Contáctanos</h1><br>
+			<form id="contact-form_id" method="post" action="">
+				<input type="text" name="name" class="form-control" placeholder="Tu Nombre" required=""><br>
+
+				<input type="email" name="email" class="form-control" placeholder="Tu Correo Electrónico" required=""><br>
+
+				<input type="text" name="adress" class="form-control" placeholder="Tu Dirección" required=""><br>
+				<textarea name="message" class="form-control" placeholder="Tu Mensaje" rows="7" required=""></textarea><br>
+
+				<input type="submit" class="form-control submit" value="ENVIAR MENSAJE"><br> <br>
+
+			</form>
+			
+		</div>
+	</div>
+
+
+	<script src="libraries/js/jquery-3.2.1.min.js"></script>
+	<script src="libraries/js/popper.min.js"></script>
+	<script src="libraries/js/bootstrap.min.js"></script>
+</body>
+</html>

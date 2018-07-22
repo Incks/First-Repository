@@ -1,0 +1,26 @@
+body{
+	background-color: #343434;
+}
+
+#contact-form_id{
+	width: 100%;
+}
+
+.contact-title{
+	width: 90%;
+}
+
+#new_body{
+	background-color: #fff;
+	width: 52%;
+	height: 100%;
+	margin:0 auto;
+	border: 1px gray solid;
+	display: flex;
+	justify-content: center;
+}
+.contact-title{
+	text-align: center;
+	margin-top: 50px;
+	transition: all 4s ease-in-out;	
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>8A: NUESTRO PAN</title>
+	
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="libraries/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css_and_scss/nuestro_pan_style.css">
+	<script type="text/javascript" src="java_s/nuestro_pan_javascript.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar_principal">		
+		<a class="navbar-brand" href="home.html"><img src="img/logo_navbar_web.png" width="40" height="30" class="d-inline-block align-top" alt="Logo">PANADERIA OCHOA</a>
+
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse mr-auto text-center" id="navbarTogglerDemo01">
+
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href="home.html">Inicio</a>
+				</li>
+
+				<li class="nav-item active">
+					<li class="nav-item dropdown  active">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Productos
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item" href="compra.html">Comprar</a>
+							<a class="dropdown-item active" href="nuestro_pan.html">Nuestro Pan</a>
+						</div>
+					</li>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-item nav-link" href="historia.html">Historia</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-item nav-link" href="informacion.html">Contacto</a>
+				</li>
+			</ul>
+			<button type="button" class="btn btn-outline-primary">Redes Sociales</button>
+		</div>
+	</nav>
+	
+	<div id="new_body">
+		<h1>Nuestro Pan <br><img src="img/bread.png" id="logo_pan" style="width: 100px; height: 100px;"></h1>
+
+		<div id="article">
+			<div id="med">
+				<a><img src="img/facebook.png" id="face" alt="HTML tutorial" style="width:60px;height:60px;border:0"></a>
+				<a><img src="img/twitter.png" id="tw" alt="HTML tutorial" style="width:60px;height:60px;border:0"></a>
+				<a><img src="img/whatsapp.png" id="wh" alt="HTML tutorial" style="width:60px;height:60px;border:0"></a>
+				<a><img src="img/insta.jpg" id="in" alt="HTML tutorial" style="width:60px;height:60px;border:0"></a>
+			</div>
+			<div id="tipo_pan">
+				<div class="pan_ejemplo">
+					<img src="img/sobao.jpg" style="width:200px;height: 120px;" class="pan_img">
+					<div class="dropdown tamaño" >
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton_S" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Tamaño
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item"   onclick="change_GS()">Grande</a>
+							<a class="dropdown-item"  onclick="change_MS()">Mediano</a>
+							<a class="dropdown-item"  onclick="change_CS()">Chusquito</a>
+						</div>
+					</div>
+					<p class="text-center precio" id="S_precio">--- €</p>
+					<a href="compra.html"><button type="button" class="btn btn-outline-primary compra">Comprar Pan Sobado</button></a>
+				</div>
+
+				<div class="pan_ejemplo">
+					<img src="img/pan-hueco.jpg" style="width:200px;height: 120px;" class="pan_img">
+					<div class="dropdown tamaño" >
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton_H" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Tamaño
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item"  onclick="change_HG()">Grande</a>
+							<a class="dropdown-item"  onclick="change_HM()">Mediano</a>
+							<a class="dropdown-item"  onclick="change_HC()">Chusquito</a>
+						</div>
+					</div>
+					<p class="text-center precio" id="H_precio">--- €</p>
+					<a href="compra.html"><button type="button" class="btn btn-outline-primary compra">Comprar Pan Hueco</button></a>
+				</div>
+
+				<div class="pan_ejemplo">
+					<img src="img/chapata.jpg" style="width:200px;height: 120px;" class="pan_img">
+					<div class="dropdown tamaño" >
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton_C" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Tamaño
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item"  onclick="change_CG()">Grande</a>
+							<a class="dropdown-item"  onclick="change_CM()">Mediano</a>
+							<a class="dropdown-item"  onclick="change_CC()">Chusquito</a>
+						</div>
+					</div>
+					<p class="text-center precio" id="C_precio">--- €</p>
+					<a href="compra.html"><button type="button" class="btn btn-outline-primary compra">Comprar Pan de Chapata</button></a>
+				</div>
+				<div class="pan_ejemplo">
+					<img src="img/baguette.jpg" style="width:200px;height: 120px;" class="pan_img">
+					<div class="dropdown tamaño" >
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton_B" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Tamaño
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item"  onclick="change_BG()">Grande</a>
+							<a class="dropdown-item"  onclick="change_BM()">Mediano</a>
+							<a class="dropdown-item"  onclick="change_BC()">Chusquito</a>
+						</div>
+					</div>
+					<p class="text-center precio" id="B_precio">--- €</p>
+					<a href="compra.html"><button type="button" class="btn btn-outline-primary compra">Comprar Baguette</button></a>
+
+			</div>
+			<div class="pan_ejemplo">
+					<img src="img/baguette-integral.jpg" style="width:200px;height: 120px;" class="pan_img">
+					<div class="dropdown tamaño" >
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton_I" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Tamaño
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item"  onclick="change_IG()">Grande</a>
+							<a class="dropdown-item"  onclick="change_IM()">Mediano</a>
+						</div>
+					</div>
+					<p class="text-center precio" id="I_precio">--- €</p>
+					<a href="compra.html"><button type="button" class="btn btn-outline-primary compra">Comprar Integral</button></a>
+
+			</div>
+			<div class="pan_ejemplo">
+					<img src="img/pansin.jpg" style="width:200px;height: 120px;" class="pan_img">
+					<div class="dropdown tamaño" >
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton_P" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Tamaño
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item"  onclick="change_PG()">Grande</a>
+							<a class="dropdown-item"  onclick="change_PM()">Mediano</a>
+						</div>
+					</div>
+					<p class="text-center precio" id="P_precio">--- €</p>
+					<a href="compra.html"><button type="button" class="btn btn-outline-primary compra">Comprar Pan Sin Sal</button></a>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+	
+	
+	<script src="libraries/js/jquery-3.2.1.min.js"></script>
+	<script src="libraries/js/popper.min.js"></script>
+	<script src="libraries/js/bootstrap.min.js"></script>
+</body>
+</html>
